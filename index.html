@@ -164,6 +164,44 @@
   .plan.featured:hover{box-shadow:0 16px 36px rgba(31,42,80,.18)}
   .faq details p{animation:rise .35s ease both}
   .calc-out b{transition:color .2s}
+
+  /* ---- Night hero (layered) ---- */
+  .hero.nh{position:relative;overflow:hidden;isolation:isolate;padding:92px 0 96px;color:#E8ECF7;background:linear-gradient(180deg,#0B1230 0%,#121C45 55%,#1C2A5E 100%)}
+  .nh .layer{position:absolute;inset:-20% 0 0 0;pointer-events:none;z-index:-1;will-change:transform}
+  .nh .l-glow{background:radial-gradient(900px 480px at 78% 8%,rgba(92,112,200,.45),transparent 65%),radial-gradient(1100px 380px at 50% 118%,rgba(240,138,44,.22),transparent 70%)}
+  .nh .l-stars1{background-image:radial-gradient(1.2px 1.2px at 20px 30px,#fff 50%,transparent 51%),radial-gradient(1px 1px at 140px 90px,#fff 50%,transparent 51%),radial-gradient(1.4px 1.4px at 220px 160px,#fff 50%,transparent 51%),radial-gradient(1px 1px at 80px 200px,#fff 50%,transparent 51%),radial-gradient(1px 1px at 260px 40px,#fff 50%,transparent 51%);background-size:300px 240px;opacity:.55}
+  .nh .l-stars2{background-image:radial-gradient(1.8px 1.8px at 60px 80px,#fff 50%,transparent 51%),radial-gradient(1.6px 1.6px at 380px 210px,#fff 50%,transparent 51%),radial-gradient(2px 2px at 520px 60px,#FFE2C4 50%,transparent 51%);background-size:620px 340px;opacity:.7;animation:twinkle 6s ease-in-out infinite alternate}
+  @keyframes twinkle{from{opacity:.45}to{opacity:.85}}
+  .nh .l-moon{inset:auto;top:56px;right:6%;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 38% 36%,#FFF7EC 0%,#F6E3C8 48%,#E7C89E 100%);box-shadow:0 0 60px 18px rgba(255,226,190,.18),0 0 140px 60px rgba(120,140,230,.14)}
+  .nh .l-moon::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 70% 64%,rgba(200,160,110,.35) 0 9%,transparent 10%),radial-gradient(circle at 46% 72%,rgba(200,160,110,.25) 0 6%,transparent 7%),radial-gradient(circle at 60% 30%,rgba(200,160,110,.22) 0 5%,transparent 6%)}
+  .nh .l-horizon{inset:auto 0 0 0;height:120px;background:linear-gradient(180deg,transparent,rgba(11,18,48,.65));}
+  .nh .hgrid{display:grid;gap:48px;align-items:center}
+  @media(min-width:980px){.nh .hgrid{grid-template-columns:1.15fr .85fr}}
+  .nh h1{color:#fff}
+  .nh .lead{color:#C3CBE3}
+  .nh .eyebrow{background:rgba(240,138,44,.16);color:#FFC08A;border:1px solid rgba(240,138,44,.35)}
+  .nh .link-cta{color:#fff}
+  .nh .cta-row span{color:#AEB7D1!important}
+  .nh .cta-row span a{color:#FFC08A}
+  .nh .note{color:#AEB7D1}
+  .nh .chips li{color:#C3CBE3;border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.04)}
+  .nh .hero-offer{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-left:6px solid var(--accent);backdrop-filter:blur(6px);box-shadow:0 14px 40px rgba(0,0,0,.28)}
+  .nh .btn{box-shadow:0 10px 30px rgba(240,138,44,.35)}
+  .tix{position:relative;height:400px;will-change:transform}
+  .tix .lbl{position:absolute;top:-30px;left:6px;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#8F9AC0;font-weight:700}
+  .tk{position:absolute;width:min(360px,92%);background:rgba(255,255,255,.96);color:var(--ink);border-radius:16px;padding:16px 18px;box-shadow:0 24px 50px rgba(3,8,30,.45);animation:floaty 7s ease-in-out infinite}
+  .tk .t-top{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--muted);margin-bottom:6px}
+  .tk .t-q{font-weight:750;color:var(--navy);margin-bottom:6px}
+  .tk .t-a{font-size:.9rem;color:#3D4766;line-height:1.4}
+  .tk .ok{display:inline-flex;align-items:center;gap:5px;color:#1C8A57;font-weight:800}
+  .tk .time{background:#EEF1FA;color:var(--navy);font-weight:800;border-radius:999px;padding:3px 9px}
+  .tk1{top:0;left:0;z-index:3}
+  .tk2{top:132px;left:12%;z-index:2;opacity:.94;animation-delay:-2.3s}
+  .tk3{top:262px;left:4%;z-index:1;opacity:.86;animation-delay:-4.6s}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @media(max-width:979px){.tix{height:280px;margin-top:44px;transform:none!important}.tk3{display:none}.tk2{top:136px}.nh .l-moon{width:96px;height:96px;top:24px;right:-18px;opacity:.85}}
+  @media(max-width:520px){.tix{height:290px}.tk{width:94%}.tk2{left:6%}}
+  @media (prefers-reduced-motion:reduce){.nh .layer,.tix{transform:none!important}}
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
     .js .reveal{opacity:1;transform:none}
@@ -191,6 +229,13 @@
   .navlinks a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}
   .navlinks a:hover{color:var(--navy)}
   @media(min-width:860px){.navlinks{display:flex}}
+  .menu-btn{display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:inherit;font-weight:700;color:var(--navy);cursor:pointer}
+  .menu-btn svg{display:block}
+  .mnav{border-top:1px solid var(--line);background:#fff}
+  .mnav[hidden]{display:none}
+  .mnav a{display:block;padding:15px 20px;text-decoration:none;color:var(--navy);font-weight:650;border-bottom:1px solid var(--line)}
+  .mnav a.mcta{background:var(--accent);border-bottom:0;text-align:center;font-weight:800}
+  @media(min-width:860px){.menu-btn,.mnav{display:none!important}}
   .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
   .link-cta{font-weight:700;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--accent)}
   .tasks{display:grid;gap:14px;margin-top:32px;list-style:none}
@@ -231,13 +276,26 @@
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq-h">FAQ</a></li>
     </ul>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Menu</button>
   </div>
+  <nav id="mnav" class="mnav" hidden aria-label="Mobile menu">
+    <a href="#handle">What we handle</a>
+    <a href="#math-h">Savings</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq-h">FAQ</a>
+    <a class="mcta" href="#request">Book a 15-minute call</a>
+  </nav>
 </header>
 
 <main id="top">
 
-  <section class="hero">
-    <div class="wrap">
+  <section class="hero nh">
+    <div class="layer l-glow" aria-hidden="true"></div>
+    <div class="layer l-stars1" data-depth="0.12" aria-hidden="true"></div>
+    <div class="layer l-stars2" data-depth="0.22" aria-hidden="true"></div>
+    <div class="layer l-moon" data-depth="0.35" aria-hidden="true"></div>
+    <div class="layer l-horizon" aria-hidden="true"></div>
+    <div class="wrap hgrid"><div>
       <span class="eyebrow">For Shopify &amp; e-commerce stores</span>
       <h1>Fast replies for every customer, even while you sleep.</h1>
       <p class="lead">A dedicated, English-speaking agent answers your tickets inside the helpdesk you already use, during your busy hours or overnight.</p>
@@ -252,6 +310,13 @@
       <ul class="chips" aria-label="Helpdesks we work inside">
         <li>Zendesk</li><li>Gorgias</li><li>Zoho Desk</li><li>Re:amaze</li><li>Or the helpdesk you already use</li>
       </ul>
+    </div>
+    <div class="tix" data-depth="-0.08" aria-label="Example of an overnight inbox handled by your agent">
+      <span class="lbl">Example: your inbox at night</span>
+      <div class="tk tk1"><div class="t-top"><span>Ticket · Order status</span><span class="time">3:12 AM</span></div><div class="t-q">"Where is my order?"</div><div class="t-a">Tracking sent, delivery date confirmed. <span class="ok">&#10003; Solved</span></div></div>
+      <div class="tk tk2"><div class="t-top"><span>Ticket · Exchange</span><span class="time">3:26 AM</span></div><div class="t-q">"Can I swap to a size M?"</div><div class="t-a">Exchange started under your policy. <span class="ok">&#10003; Solved</span></div></div>
+      <div class="tk tk3"><div class="t-top"><span>Ticket · Pre-sale</span><span class="time">3:41 AM</span></div><div class="t-q">"Does this ship to Canada?"</div><div class="t-a">Answered with shipping times and costs. <span class="ok">&#10003; Solved</span></div></div>
+    </div>
     </div>
   </section>
 
@@ -550,5 +615,18 @@
   })();
 </script>
 
+<script>
+(function(){var b=document.querySelector('.menu-btn'),m=document.getElementById('mnav');if(!b||!m)return;
+function set(o){m.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false');}
+b.addEventListener('click',function(){set(m.hidden);});
+m.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});})();
+</script>
+<script>
+(function(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var hero=document.querySelector('.hero.nh');if(!hero)return;var els=hero.querySelectorAll('[data-depth]'),ticking=false;
+function upd(){ticking=false;var y=window.scrollY;if(y>hero.offsetHeight*1.2)return;
+els.forEach(function(el){if(el.classList.contains('tix')&&window.innerWidth<980)return;var d=parseFloat(el.getAttribute('data-depth'));el.style.transform='translate3d(0,'+(y*d).toFixed(1)+'px,0)';});}
+window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(upd);}},{passive:true});})();
+</script>
 </body>
 </html>
